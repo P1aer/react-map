@@ -14,14 +14,21 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
-
+    "baseUrl": "src",
+    "paths": {
+      "@shared/*": ["shared/*"], // Alias for shared directory
+      "@modules/*": ["modules/*"], // Alias for modules directory
+      "@app/*": ["app/*"], // Alias for app directory
+      "@/*": ["*"] // Optional: Alias for the entire src directory
+    },
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"]
 }

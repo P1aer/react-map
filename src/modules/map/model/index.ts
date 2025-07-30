@@ -1,0 +1,1 @@
+export {MapRoutes} from "./routes"
