@@ -1,0 +1,1 @@
+export { default as monsterrat } from './montserrat.css';

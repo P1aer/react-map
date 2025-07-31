@@ -1,0 +1,1 @@
+export { MOCK_DATA, MOCK_RESPONSE_TIME } from "./mockData"
