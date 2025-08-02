@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const MapComponent = (props) => {
+export const MapComponent = () => {
     return (
         <div>
             map

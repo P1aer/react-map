@@ -1,10 +1,9 @@
-import {Route} from "react-router";
-import {DefaultLayout} from "@shared/layouts";
-import {MapPage} from "@modules/map/ui";
-import React from "react";
+import { Route } from "react-router";
+import { DefaultLayout } from "@shared/layouts";
+import {MapPage} from "@modules/map";
 
-export const MapRoutes:React.ReactElement = (
-    <Route element={<DefaultLayout/>}>
-        <Route path='/' element={<MapPage />}/>
-    </Route>
+export const MapRoutes = (
+            <Route element={<DefaultLayout/>}>
+            <Route path='/' element={<MapPage />}/>
+        </Route>
 )

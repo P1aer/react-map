@@ -1,15 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import  {useEffect} from 'react';
 import {VehicleTable} from "./table";
 import {MapComponent} from "./mapComponent";
 import {SideBar} from "./sideBar";
-import {fetchMock, selectAll} from "@/entities/mock";
-import {useMockDispatch, useMockSelector} from "@/entities/mock/model";
+import {selectAll} from "@/entities/mock";
+import {useMockActions, useMockSelector} from "@/entities/mock/model";
 
 export const MapPage = () => {
-    const dispatch = useMockDispatch()
+    const { fetchMock } = useMockActions()
     const {data, error} = useMockSelector(selectAll)
+
+    console.log('rerender')
     useEffect(() => {
-        dispatch(fetchMock())
+        fetchMock()
     },[])
 
     return (

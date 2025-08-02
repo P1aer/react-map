@@ -1,9 +1,8 @@
 import {Routes} from "react-router";
-import {MapRoutes} from "@modules/map";
 import type {FC} from "react";
-import React from "react";
+import { MapRoutes } from "@modules/map/model";
 
-export const AppRouter:React<FC> = () => (
+export const AppRouter:FC = () => (
     <Routes>
         {MapRoutes}
     </Routes>

@@ -1,6 +1,5 @@
-import {mockSlice} from "@/entities/mock";
 
-export type VehicleStatus = 'moving' | 'idle' | 'offline'
+export type VehicleStatus = 'moving' | 'idle' | 'offline' | 'locked'
 
 export type VehicleCoords = [number, number]
 export interface VehicleResponse {
@@ -10,12 +9,7 @@ export interface VehicleResponse {
     "coords": VehicleCoords,
     "lastUpdate": string,
 }
-
-export type VehicleResponseKeys = keyof VehicleResponse
-
-export type MockSliceState = {
-    data: VehicleResponse[],
-    loading: boolean,
-    error: string | null,
+export interface VechicleData extends VehicleResponse {
+    isLocked?: boolean
 }
-export type MockDispatch = typeof mockSlice.dispatch
+export type VehicleResponseKeys = keyof VehicleResponse
