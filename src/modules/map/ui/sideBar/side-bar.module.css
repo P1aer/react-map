@@ -1,4 +1,6 @@
+.unhide {
 
+}
 .sideBar {
     transition: opacity 0.6s ease-in,width 0.4s ease-in;
 }

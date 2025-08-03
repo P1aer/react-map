@@ -5,7 +5,7 @@ import { selectFilter, setFilter, useMapDispatch, useMapSelector } from '@module
 import type { SyntheticEvent } from "react";
 
 export const VehicleFilters = () => {
-    const {error} = useMockSelector(selectAll)
+    const {error, loading} = useMockSelector(selectAll)
     const filter = useMapSelector(selectFilter)
 
     const dispatch = useMapDispatch();
@@ -18,12 +18,9 @@ export const VehicleFilters = () => {
     }
     return (
         <div className='flex flex-col w-[40%] mb-3'>
-            <h2 className='text-2xl font-bold mb-3'>
-                Filters
-            </h2>
             <BaseSelect
                 onSelect={onSelect}
-                disabled={!!error}
+                disabled={!!error || loading}
                 value={filter}
                 options={statusFilter}
                 label={'Status'}

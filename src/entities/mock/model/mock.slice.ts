@@ -1,9 +1,9 @@
 import {bindActionCreators, createAsyncThunk, createSlice, type PayloadAction} from '@reduxjs/toolkit';
-import {fetchData, postDataById, type VechicleData} from "@/entities/mock/model";
+import {fetchData, postDataById, type VehicleData} from "@/entities/mock/model";
 import {useDispatch, useSelector} from "react-redux";
 
 export type MockSliceState = {
-    data: VechicleData[],
+    data: VehicleData[],
     loading: boolean,
     error: string | null,
 }
@@ -26,7 +26,7 @@ export const fetchMock = createAsyncThunk(
 );
 export const postMock = createAsyncThunk(
     'post',
-    async(postData: VechicleData, { rejectWithValue }) => {
+    async(postData: VehicleData, { rejectWithValue }) => {
         try {
             return await postDataById(postData)
         }
@@ -40,7 +40,7 @@ const mockSlice = createSlice({
     name: 'mock',
     initialState,
     reducers: {
-        setVehById:(state, action: PayloadAction<VechicleData>) => {
+        setVehById:(state, action: PayloadAction<VehicleData>) => {
             const arr = [...state.data]
             const curr = arr.find((el => el.id === action.payload.id))
             if (!curr) return
@@ -49,8 +49,8 @@ const mockSlice = createSlice({
         }
     },
     selectors: {
-      selectAll: (state) => state,
-      selectVehById: (state, id: string | null) => state.data.find((v) => v.id === id)
+      selectAll: (state: MockSliceState) => state,
+      selectVehById: (state: MockSliceState, id: string | null) => state.data.find((v) => v.id === id)
     },
     extraReducers: (builder) => {
         builder

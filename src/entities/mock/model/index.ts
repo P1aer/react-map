@@ -4,6 +4,6 @@ export type {
     VehicleStatus,
     VehicleResponse,
     VehicleResponseKeys,
-    VechicleData,
+    VehicleData,
 } from "./types"
 export { default as mockSlice, fetchMock,postMock, setVehById, useMockDispatch, useMockSelector, selectAll, selectVehById, type MockSliceState, useMockActions } from './mock.slice.ts'

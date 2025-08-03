@@ -1,5 +1,5 @@
 
-export type VehicleStatus = 'moving' | 'idle' | 'offline' | 'locked'
+export type VehicleStatus = 'moving' | 'idle' | 'offline'
 
 export type VehicleCoords = [number, number]
 export interface VehicleResponse {
@@ -9,7 +9,7 @@ export interface VehicleResponse {
     "coords": VehicleCoords,
     "lastUpdate": string,
 }
-export interface VechicleData extends VehicleResponse {
+export interface VehicleData extends VehicleResponse {
     isLocked?: boolean
 }
 export type VehicleResponseKeys = keyof VehicleResponse

@@ -12,17 +12,17 @@ export const BasePagination = ({ currentPage = 1, totalPage = 1, setPage}: Compo
     const isPageLast = currentPage === totalPage;
 
     const onRightClick = () => {
-        if (isPageFirst) return
+        if (isPageLast) return
         setPage(currentPage + 1)
     }
 
     const onLeftClick = () => {
-        if (isPageLast) return
+        if (isPageFirst) return
         setPage(currentPage - 1)
     }
     return (
         <div className='flex flex-row items-center'>
-            <FaChevronLeft onClick={onRightClick} className={`${isPageFirst ? 'opacity-40' : 'cursor-pointer'}`}/>
+            <FaChevronLeft onClick={onLeftClick} className={`${isPageFirst ? 'opacity-40' : 'cursor-pointer'}`}/>
             {createRange(1, totalPage).map((page) =>
                 <div
                     key={page}
@@ -31,7 +31,7 @@ export const BasePagination = ({ currentPage = 1, totalPage = 1, setPage}: Compo
                     {page.toString().padStart(2,'0')}
                 </div>
             )}
-            <FaChevronRight onClick={onLeftClick} className={`${isPageLast ? 'opacity-40' : 'cursor-pointer'}`}/>
+            <FaChevronRight onClick={onRightClick} className={`${isPageLast ? 'opacity-40' : 'cursor-pointer'}`}/>
         </div>
     );
 };

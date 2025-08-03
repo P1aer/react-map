@@ -33,7 +33,7 @@ export const VehicleTable = ({data = []}: ComponentProps) => {
         setCurrentPage(1)
     }, [filter])
     return (
-        <div className='w-[50%]'>
+        <div className='w-full max-w-[1024px]'>
             <VehicleFilters />
             <BaseTable<VehicleTableElement, VehicleTableElementKeys>
                 onRowClick={onRowClick}

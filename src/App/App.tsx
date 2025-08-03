@@ -4,6 +4,7 @@ import './styles/global.css';
 import {BrowserRouter} from "react-router";
 import {Loader} from "@shared/ui";
 import {selectLoading, useLoadSelector} from '@/app/stores'
+import 'leaflet/dist/leaflet.css';
 
 
 function App() {

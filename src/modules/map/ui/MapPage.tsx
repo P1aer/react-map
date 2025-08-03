@@ -9,7 +9,6 @@ export const MapPage = () => {
     const { fetchMock } = useMockActions()
     const {data, error} = useMockSelector(selectAll)
 
-    console.log('rerender')
     useEffect(() => {
         fetchMock()
     },[])
@@ -20,7 +19,7 @@ export const MapPage = () => {
             <div className="flex flex-col w-full p-8">
                 { error && <div className='text-xl font-bold text-rose-600'>{error}</div>}
                 <VehicleTable data={data} />
-                <MapComponent />
+                <MapComponent vehicles={data}/>
             </div>
         </div>
     )

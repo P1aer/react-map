@@ -11,3 +11,4 @@ export function isVehicleStatus(value: unknown): value is VehicleTableStatusFilt
     typeof value === 'string' &&
     ['moving', 'idle', 'offline', 'locked', ''].includes(value)
   );}
+
