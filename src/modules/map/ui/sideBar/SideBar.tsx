@@ -7,7 +7,7 @@ import {
 import style from './side-bar.module.css'
 import { MdClose } from "react-icons/md";
 import { SideBarVehicle } from "../sideBarVehicle";
-
+import  img from '@/shared/assets/images/car-front.webp?url'
 
 export const SideBar = () => {
     const isCardOpen = useMapSelector(selectCardOpen)
@@ -26,7 +26,7 @@ export const SideBar = () => {
             ].join(' ')}>
                 <div className="flex flex-col h-full">
                     <MdClose className="self-end text-2xl" onClick={closeSideBar}/>
-                    <img src='src/shared/assets/images/car-front.webp' alt='car img'/>
+                    <img src={img} alt='car img'/>
                     <SideBarVehicle />
                 </div>
         </div>

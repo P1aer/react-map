@@ -1,7 +1,7 @@
 import {Marker, Popup} from "react-leaflet";
 import type {TBaseMarker, TPopupContent} from "@shared/lib";
 import L from 'leaflet';
-
+import img from '@/shared/assets/images/car-svg.svg?url'
 interface ComponentProps extends TBaseMarker<TPopupContent>{
 
 }
@@ -25,7 +25,7 @@ const createStatusIcon = (color: string) => {
         width: 30px;
         height: 30px;
                     " 
-            src='src/shared/assets/images/car-svg.svg'
+            src="${img}"
             alt="marker"
          >
       </div>
