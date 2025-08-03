@@ -1,69 +1,26 @@
-# React + TypeScript + Vite
+# Map App
+### Список машин 
+1. Отображайте таблицу или карточки со столбцами: Name, Status, Last Update. 
+2. Фильтр по статусу (moving/idle/offline).
+3. Пагинация по 5 элементов на страницу. 
+### Карта
+1. Используйте React-Leaflet. 
+2. Подложку на выбор (Яндекс, OpenStreetMap или любую другую).
+3. Маркеры по coords, цвет или иконка зависит от status.
+4. При клике на маркер показывайте Popup с именем машины и временем последнего обновления.
+### Детальная карточка 
+1. При клике по строке списка или маркеру открывайте боковую панель (или модалку) с полным описанием машины: • Name, Status, Last Update, Coords
+2. Кнопка «Lock vehicle», которая эмулирует блокировку (можно console.log). 
+3. По желанию: Кнопка «Center on map», которая центрирует карту на этой машине.
+### Загрузка и ошибки
+1. При «загрузке» данных (имитировать fetch через setTimeout) показывайте индикатор загрузки. 
+2. Если данные пусты или «сервер» возвращает ошибку, выводите сообщение об ошибке и отключайте фильтры/кнопки.
+### Обработка состояния
+1. State можно хранить в React-хукe или Redux.
+2. Чистые, переиспользуемые компоненты: List, Card, Map, Marker, Pagination... 
+### UI/UX 
+1. Минимальный, но аккуратный дизайн (CSS-модули, Tailwind или аналог).
+2. Адаптивность не требуется, достаточно рабочего десктоп-вида.
+## Deploy here
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+https://react-map-fo1v.vercel.app/

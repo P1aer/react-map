@@ -61,6 +61,9 @@ const mockSlice = createSlice({
             .addCase(fetchMock.fulfilled, (state: MockSliceState, action) => {
                 state.loading = false;
                 if ('payload' in action) {
+                    if (action.payload.length === 0) {
+                        state.error = 'No Data'
+                    }
                     state.data = action.payload;
                 }
                 else {
