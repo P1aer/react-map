@@ -10,7 +10,7 @@ export default defineConfig({
       { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
       { find: '@shared', replacement: fileURLToPath(new URL('./src/shared', import.meta.url)) },
       { find: '@modules', replacement: fileURLToPath(new URL('./src/modules', import.meta.url)) },
-      { find: '@app', replacement: fileURLToPath(new URL('./src/app', import.meta.url)) },
+      { find: '@app', replacement: fileURLToPath(new URL('./src/App', import.meta.url)) },
     ],
   },
 })

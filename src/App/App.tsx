@@ -1,9 +1,9 @@
-import {AppRouter} from "@app/routers";
+import {AppRouter} from "./routers";
 import '@shared/fonts/montserrat/monsterrat.css';
 import './styles/global.css';
 import {BrowserRouter} from "react-router";
 import {Loader} from "@shared/ui";
-import {selectLoading, useLoadSelector} from '@/app/stores'
+import {selectLoading, useLoadSelector} from './stores'
 import 'leaflet/dist/leaflet.css';
 
 
